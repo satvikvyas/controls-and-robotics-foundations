@@ -1,0 +1,9 @@
+# Python junk
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+
+# OS junk
+.DS_Store
