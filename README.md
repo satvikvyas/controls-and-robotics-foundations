@@ -15,8 +15,9 @@ Modeled a standard mass-spring-damper system to analyze the effect of the dampin
 * **Results:** Verified that $\zeta = 1.0$ (Critical Damping) provides the optimal balance between speed and stability, while $\zeta < 1.0$ introduces oscillation.
 * **Plot:** See [link1](https://github.com/slimyshi/controls-and-robotics-foundations/blob/main/results/Figure_1.png') and  [link2](https://github.com/slimyshi/controls-and-robotics-foundations/blob/main/results/Figure_2.png) for the step response analysis respectively.
 
-### 2. PID Control (In Development)
-Implemented closed loop feedback in a frictionless system.
+### 2. PID Control (Completed)
+Modeled a drone system with gravity and drag, with fixed target (10meters) and tracked path (10 + 5sin(t))
+and analysed the impact of kp, kd and ki on the system.
 
 ---
 
@@ -26,4 +27,3 @@ Implemented closed loop feedback in a frictionless system.
 bash
 
 git [clone](https://github.com/slimyshi/controls-and-robotics-foundations.git](https://github.com/slimyshi/controls-and-robotics-foundations.git )
-git
