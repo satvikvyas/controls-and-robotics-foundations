@@ -1,7 +1,6 @@
 #the perfect human knows how to code a dromne to float and stay at exactly 10 meters 
 import numpy as np
-import matplotlib.pyplot as plt
-import control 
+import matplotlib.pyplot as plt 
 
 target = 10.0
 g = 9.81 #gravity
