@@ -9,26 +9,37 @@ A repository for simulation-based control systems projects. The focus is on impl
 ## Project Status
 
 ### 1. Second-Order System Simulation (Completed)
-
 Modeled a standard mass-spring-damper system to analyze the effect of the damping ratio ($\zeta$) on stability and rise time.
-
 * **Source:** `src/secondodsim.py`
 * **Results:** Verified that $\zeta = 1.0$ (Critical Damping) provides the optimal balance between speed and stability, while $\zeta < 1.0$ introduces oscillation.
-* **Plot:** See [link1](https://github.com/slimyshi/controls-and-robotics-foundations/blob/main/results/Figure_1.png) and [link2](https://github.com/slimyshi/controls-and-robotics-foundations/blob/main/results/Figure_2.png) for the step response analysis respectively.
+* **Plot:** [View Mass-Spring-Damper Step Response](https://github.com/satvikvyas/controls-and-robotics-foundations/blob/main/results/mass_spring_damper.png)
 
 ### 2. PID Control & Trajectory Tracking (Completed)
-
-Modeled a drone system with gravity and drag, with fixed target (10meters) and tracked path (10 + 5sin(t)) and analysed the impact of kp, kd and ki on the system. Added Feedforward prediction to eliminate phase lag during tracking.
+Modeled a drone system with gravity and drag, with fixed target (10 meters) and tracked path ($10 + 5\sin(t)$) and analyzed the impact of $K_p$, $K_d$, and $K_i$ on the system. Added Feedforward prediction to eliminate phase lag during tracking.
+* **Source:** `src/pid.py`, `src/pid_test.py`
+* **Results:** * [View Fixed 10m Target Response](https://github.com/satvikvyas/controls-and-robotics-foundations/blob/main/results/drone_with%20_pd_controller_and_10m_target.png)
+    * [View Sine Wave Path Tracking](https://github.com/satvikvyas/controls-and-robotics-foundations/blob/main/results/drome%20with%20sine%20wave%20path.png)
+    * [View Kp Gain Comparison](https://github.com/satvikvyas/controls-and-robotics-foundations/blob/main/results/Kp_controller_comparision.png)
+    * [View Kd Gain Impact](https://github.com/satvikvyas/controls-and-robotics-foundations/blob/main/results/impact%20of%20d_GAIN.png)
+    * [View PD Control Analysis](https://github.com/satvikvyas/controls-and-robotics-foundations/blob/main/results/pd_control.png)
 
 ### 3. 2D Waypoint Navigation (Completed)
-
 Implemented a dual-PID control system to navigate a drone through a 2D environment across multiple waypoints using dynamic distance thresholds.
-
+* **Source:** `src/2d_controller.py`
 * **Results:** System successfully executed path tracking across coordinates [(0,0) -> (0,10) -> (15,10) -> (20,25)] with a 0.1m cornering tolerance.
+* **Plot:** [View 2D Path Tracking](https://github.com/satvikvyas/controls-and-robotics-foundations/blob/main/results/2d_drone_tracking.png)
 
-### 4. State Space Representation (In Progress)
-**source** = "src/state_space.py"
+### 4. State Space Representation (Completed)
 Transitioned the physics engine from scalar variables to a state-space matrix formulation ($\dot{\mathbf{x}} = A\mathbf{x} + B\mathbf{u}$) to handle multi-variable physics (inertia and drag) simultaneously using NumPy.
+* **Source:** `src/state_space.py`
+* **Results:** * [View State-Space Equation Validation](https://github.com/satvikvyas/controls-and-robotics-foundations/blob/main/results/state_SPACEequation.png)
+    * [View State Response Comparison](https://github.com/satvikvyas/controls-and-robotics-foundations/blob/main/results/State_response_comparision.png)
+
+### 5. LQR Optimal Control (Completed)
+Implemented Linear Quadratic Regulator (LQR) control to automate gain calculation by minimizing a quadratic cost function ($Q$ and $R$ matrices).
+* **Source:** `src/lqr.py`, `src/cartpole.py`
+* **Results:** * [View 1D Drone LQR Stability]()
+    * [View Inverted Pendulum (Cart-Pole) Balance](https://github.com/satvikvyas/controls-and-robotics-foundations/blob/main/results/Cartpole.png)
 
 ---
 
