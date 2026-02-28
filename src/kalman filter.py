@@ -29,7 +29,7 @@ time =  np.arange(0 , 20, dt)
 
 true_pos = 10 + 5*(np.sin(time))
 
-noisy_sensor = true_pos +np.random.normal(0,5.0)
+noisy_sensor = true_pos +np.random.normal(0, 5.0, len(time))
 
 
 P= np.identity(2)
@@ -66,7 +66,7 @@ for i ,t in enumerate(time):
     history_predicted.append(xf[0,0])
 
 plt.plot(time , history_predicted , color = "r", label = "Kalman estimate path")
-plt.plot(time , noisy_sensor,'o', alpha = 0.2, markersize = 0.2,  color="black",label = 'noise' )
+plt.plot(time , noisy_sensor,'o', alpha = 0.5, markersize = 1,  color="black",label = 'noise' )
 plt.plot(time , true_pos, color = "blue", label= "actual path")
 plt.grid(True)
 plt.xlabel('Time (s)')
